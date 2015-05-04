@@ -15,7 +15,7 @@ env:
         - VERSION="8.1"
         - BYPASS_TOOLCHECK=1
         - KIF_SCREENSHOTS=Screens
-        - secure: "JPPcWdmNIJiR3YcIwe0LRYce6qDdsiagO+eKKAp7eVk/wD9UHbz96Ms2FFkXxPhRJB1PA6Pf8FpAzIL2YRiJL9jRtKHSvtdF1cSto+57XyBkCsw7PkMVUIxp7fg6Wiwn3H3tucF8jisIkv/Pn7R+9EqePkZSqqu3+ig5AX9ApQ4="
+        - secure: "Vvk5rN/mFA22eWSGxpZsQDSnSQY2QFBJphvc66n/bMX9fcm7NHhTDBD5ZfJN4S5FVYN9AIQj0w56gnx8nflJ7dfvhWZ0bjkW2ZPkw1909FLS8fsA2bNwjLU9vI7PAN3Lctxamn3mEcLrg3kzx4OJRQ9Y/PhuaeknP8w2RS/L1Ao="
 
 install: 
     - cd submodules/build 
