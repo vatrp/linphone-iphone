@@ -54,14 +54,7 @@
 		[self initUICamSwitch];
 	}
     return self;
-}	
-
-
-- (void)dealloc {
-    [super dealloc];
-	[preview release];
 }
-
 
 #pragma mark - 
 
@@ -79,7 +72,7 @@
 		}
 	}
 	if (newCamId){
-		[LinphoneLogger logc:LinphoneLoggerLog format:"Switching from [%s] to [%s]", currentCamId, newCamId];
+		LOGI(@"Switching from [%s] to [%s]", currentCamId, newCamId);
 		linphone_core_set_video_device([LinphoneManager getLc], newCamId);
 		LinphoneCall *call = linphone_core_get_current_call([LinphoneManager getLc]);
         if(call != NULL) {
