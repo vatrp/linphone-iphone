@@ -13,7 +13,7 @@ tag=build-$(date +%Y%m%d%H%M%S).$(git rev-parse --short HEAD)
     --description "This is an automatically generated tag that will eventually be expired" \
     --pre-release
 
-tarball=/tmp/linphone-build.tar.bz2
+tarball=/tmp/linphone-iphone-build.tar.bz2
 tar cjf $tarball .
 
 /tmp/github-release upload \
