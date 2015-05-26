@@ -16,19 +16,21 @@ env:
         - BYPASS_TOOLCHECK=1
         - KIF_SCREENSHOTS=Screens
         - secure: "Vvk5rN/mFA22eWSGxpZsQDSnSQY2QFBJphvc66n/bMX9fcm7NHhTDBD5ZfJN4S5FVYN9AIQj0w56gnx8nflJ7dfvhWZ0bjkW2ZPkw1909FLS8fsA2bNwjLU9vI7PAN3Lctxamn3mEcLrg3kzx4OJRQ9Y/PhuaeknP8w2RS/L1Ao="
+        - secure: "eMQeV+e0XJ60RX3iap/IZGQBM0AePuJVZG0t7nbkUZuyq11dd6krWE7Qwg2ylpaWAbW567RVj+lMxU8qfNCkrIGnMshiKpZ8lCH61I9+oFBYILvoT8KLgf5OxvvTAAhJzk2814sGucXYuZN/H9QifvVkbASSUfqZqMxrLDpLtDw="
 
-install: 
-    - cd submodules/build 
+install:
+    - cd submodules/build
     - make download-sdk
     - cd ../..
     - git submodule update --init Classes/KIF
     - git submodule update --init --recursive submodules/linphone
     - mkdir -p Screens
     - export KIF_SCREENSHOTS=`pwd`/Screens
-
 after_script:
-    - ./Tools/imgur_upload.sh 
-
+    - find . -name '*.ipa' -print
+    - find . -name '*.app' -print
+    - ./Tools/github_release.sh
+    - ./Tools/imgur_upload.sh
 notifications:
   slack:
     secure: Bzzg70aXapDSORKck84ZCvQUNCNZtCazhYeqk86/RaHP+5LIbHtqGa8hN3vxImcKYslV5N/N8einPR55wK28sTJIVzqRUERRVu2QxmcfeL2kolQq++VLNnj6+vf4MjXJjT68pI623+Vmj5FK71RJpFNN6aVqHs5kp0nwgQ79aMY=
