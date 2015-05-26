@@ -27,8 +27,7 @@ install:
     - mkdir -p Screens
     - export KIF_SCREENSHOTS=`pwd`/Screens
 after_script:
-    - find . -name '*.ipa' -print
-    - find . -name '*.app' -print
+    - env | grep -i travis
     - ./Tools/github_release.sh
     - ./Tools/imgur_upload.sh
 notifications:
